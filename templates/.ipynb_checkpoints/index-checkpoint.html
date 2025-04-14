@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECG Activity Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <h1>ECG Activity Prediction</h1>
+      <p class="description">Upload a CSV file containing ECG sensor data to predict the activity label.</p>
+      
+      <form method="POST" enctype="multipart/form-data" class="form-area">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload & Predict</button>
+      </form>
+
+      {% if prediction_label %}
+      <div class="result">
+        <p><span>Predicted Label:</span> {{ prediction_label }}</p>
+        <p><span>Activity:</span> {{ activity }}</p>
+        <a class="download" href="{{ url_for('download_file', filename=filename) }}">Download CSV</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

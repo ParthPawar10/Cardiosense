@@ -1,0 +1,2 @@
+acc_chest_x,acc_chest_y,acc_chest_z,ecg_1,ecg_2,acc_ankle_x,acc_ankle_y,acc_ankle_z,gyro_ankle_x,gyro_ankle_y,gyro_ankle_z,magnet_ankle_x,magnet_ankle_y,magnet_ankle_z,acc_arm_x,acc_arm_y,acc_arm_z,gyro_arm_x,gyro_arm_y,gyro_arm_z,magnet_arm_x,magnet_arm_y,magnet_arm_z,label
+-9.4335,-2.0638,0.98268,0.16327,0.13396,0.7756,-9.1068,4.167,-0.46753,-0.55159,0.63458,0.55933,0.54487,-0.59384,-6.4884,-2.4723,6.7722,-0.70196,0.47639,0.60991,1.2584,0.16914,0.023477,2

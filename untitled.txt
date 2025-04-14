@@ -1,0 +1,35 @@
+from flask import Flask, render_template, request, redirect, url_for
+import pandas as pd
+import joblib
+import os
+
+app = Flask(__name__)
+UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Load model and scaler
+model = joblib.load('hybrid_model.pkl')
+scaler = joblib.load('scaler.pkl')
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    prediction = None
+
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and file.filename.endswith('.csv'):
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(file_path)
+
+            test_case = pd.read_csv(file_path)
+            if 'label' in test_case.columns:
+                test_case = test_case.drop(columns=['label'])
+
+            test_case_scaled = scaler.transform(test_case)
+            prediction = model.predict(test_case_scaled)[0]
+
+    return render_template('index.html', prediction=prediction)
+
+if __name__ == '__main__':
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    app.run(debug=True)

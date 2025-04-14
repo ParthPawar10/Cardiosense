@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9fb;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px;
+}
+
+.left-panel {
+  max-width: 50%;
+}
+
+.left-panel h1 {
+  font-size: 42px;
+  color: #121212;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+button,
+a.download {
+  background: linear-gradient(135deg, #5562ff, #6ee2f5);
+  border: none;
+  color: white;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+a.download:hover {
+  opacity: 0.9;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="file"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eef1f8;
+  border-left: 4px solid #5562ff;
+  border-radius: 8px;
+}
+
+.result p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.right-panel img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+}
